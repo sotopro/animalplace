@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder> {
@@ -30,7 +32,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull AnimalAdapter.ViewHolder holder, int position) {
         holder.animalName.setText(animalModel.get(position).getAnimalName());
-        holder.animalPhoto.setImageResource(animalModel.get(position).getAnimalPhoto());
+        Glide.with(holder.itemView.getContext()).load(animalModel.get(position).getAnimalPhoto()).into(holder.animalPhoto);
     }
 
     @Override

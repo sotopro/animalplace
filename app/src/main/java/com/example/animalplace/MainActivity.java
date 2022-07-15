@@ -30,18 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void getData(){
         animalModel = new ArrayList<>();
-        animalModel.add(new AnimalModel("bufalo", R.drawable.bufalo));
-        animalModel.add(new AnimalModel("cerdo", R.drawable.cerdo));
-        animalModel.add(new AnimalModel("cocodrilo", R.drawable.cocodrilo));
-        animalModel.add(new AnimalModel("conejo", R.drawable.conejo));
-        animalModel.add(new AnimalModel("elefante", R.drawable.elefante));
-        animalModel.add(new AnimalModel("gato", R.drawable.gato));
-        animalModel.add(new AnimalModel("morsa", R.drawable.morsa));
-        animalModel.add(new AnimalModel("oveja", R.drawable.oveja));
-        animalModel.add(new AnimalModel("panda", R.drawable.panda));
-        animalModel.add(new AnimalModel("perro", R.drawable.perro));
-        animalModel.add(new AnimalModel("pollo", R.drawable.pollo));
-        animalModel.add(new AnimalModel("rana", R.drawable.rana));
-        animalModel.add(new AnimalModel("tortuga", R.drawable.tortuga));
+        animalModel.add(new AnimalModel("bufalo", "https://cdn-icons-png.flaticon.com/512/3969/3969798.png"));
+        animalModel.add(new AnimalModel("cerdo", "https://cdn-icons-png.flaticon.com/512/3969/3969799.png"));
+        animalModel.add(new AnimalModel("cocodrilo", "https://cdn-icons-png.flaticon.com/512/3969/3969794.png"));
+        animalModel.add(new AnimalModel("conejo", "https://cdn-icons-png.flaticon.com/512/3969/3969777.png"));
+        animalModel.add(new AnimalModel("elefante", "https://cdn-icons-png.flaticon.com/512/3969/3969722.png"));
+        animalModel.add(new AnimalModel("gato", "https://cdn-icons-png.flaticon.com/512/3969/3969800.png"));
+        animalModel.add(new AnimalModel("morsa", "https://cdn-icons-png.flaticon.com/512/3969/3969761.png"));
+        animalModel.add(new AnimalModel("oveja", "https://cdn-icons-png.flaticon.com/512/3969/3969801.png"));
+        animalModel.add(new AnimalModel("panda", "https://cdn-icons-png.flaticon.com/512/3969/3969735.png"));
+        animalModel.add(new AnimalModel("perro", "https://cdn-icons-png.flaticon.com/512/3969/3969775.png"));
+        animalModel.add(new AnimalModel("pollo", "https://cdn-icons-png.flaticon.com/512/3969/3969783.png"));
+        animalModel.add(new AnimalModel("rana", "https://cdn-icons-png.flaticon.com/512/3969/3969785.png"));
+        animalModel.add(new AnimalModel("tortuga", "https://cdn-icons-png.flaticon.com/512/3969/3969730.png"));
     }
 }

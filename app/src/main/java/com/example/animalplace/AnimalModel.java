@@ -2,9 +2,9 @@ package com.example.animalplace;
 
 public class AnimalModel {
     private String animalName;
-    private int animalPhoto;
+    private String animalPhoto;
 
-    public AnimalModel(String animalName, int animalPhoto) {
+    public AnimalModel(String animalName, String animalPhoto) {
         this.animalName = animalName;
         this.animalPhoto = animalPhoto;
     }
@@ -13,7 +13,7 @@ public class AnimalModel {
         return animalName;
     }
 
-    public int getAnimalPhoto() {
+    public String getAnimalPhoto() {
         return animalPhoto;
     }
 
@@ -21,7 +21,7 @@ public class AnimalModel {
         this.animalName = animalName;
     }
 
-    public void setAnimalPhoto(int animalPhoto) {
+    public void setAnimalPhoto(String animalPhoto) {
         this.animalPhoto = animalPhoto;
     }
 }
