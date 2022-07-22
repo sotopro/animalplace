@@ -9,6 +9,17 @@
     android:background="?colorPrimary"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/support_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_baseline_support_24"
+        app:iconTint="?android:textColor"
+        android:text="Support"
+        android:textColor="?android:textColor"
+        android:backgroundTint="@color/white"
+    />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/animal_recycler_view"
         android:layout_width="match_parent"

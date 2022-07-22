@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button supportButton;
     private RecyclerView recyclerView;
     private AnimalAdapter animalAdapter;
     private ArrayList<AnimalModel> animalModel;
@@ -20,12 +22,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getData();
 
+        supportButton = findViewById(R.id.support_button);
         recyclerView = findViewById(R.id.animal_recycler_view);
         animalAdapter = new AnimalAdapter(animalModel);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(animalAdapter);
+
+        supportButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SupportActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void getData(){

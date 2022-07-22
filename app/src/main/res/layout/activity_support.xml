@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SupportActivity">
+
+    <ImageView
+        android:id="@+id/support_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/ic_baseline_image_24"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/take_photo_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="20dp"
+        android:text="Take Photo"
+        app:layout_constraintTop_toBottomOf="@+id/support_image"
+        android:textColor="?android:textColor"
+        />
+    <Button
+        android:id="@+id/go_back_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="20dp"
+        android:text="Go back"
+        app:layout_constraintTop_toBottomOf="@+id/take_photo_button"
+        android:textColor="?android:textColor"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
