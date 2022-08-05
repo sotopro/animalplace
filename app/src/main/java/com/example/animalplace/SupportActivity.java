@@ -11,9 +11,16 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SupportActivity extends AppCompatActivity {
 
@@ -23,6 +30,9 @@ public class SupportActivity extends AppCompatActivity {
     private Button goBackButton;
     private ImageView supportImage;
     private Uri imageUri;
+    private EditText supportEditText;
+    private Button supportButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +42,8 @@ public class SupportActivity extends AppCompatActivity {
         takePhotoButton = findViewById(R.id.take_photo_button);
         supportImage = findViewById(R.id.support_image);
         goBackButton = findViewById(R.id.go_back_button);
+        supportEditText = findViewById(R.id.support_edit_text);
+        supportButton = findViewById(R.id.support_button);
 
 
         takePhotoButton.setOnClickListener(v -> {
@@ -52,10 +64,42 @@ public class SupportActivity extends AppCompatActivity {
             }
         });
 
+        supportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(supportEditText.getText().toString().isEmpty() || imageUri == null){
+                    Toast.makeText(SupportActivity.this, "Please enter a message", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    postAnimal(supportEditText.getText().toString(), imageUri.toString());
+                    Intent intent = new Intent(SupportActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
         goBackButton.setOnClickListener(v -> {
             Intent intent = new Intent(SupportActivity.this, MainActivity.class);
             startActivity(intent);
         });
+    }
+
+    private void postAnimal(String message, String imageUri){
+        SupportModel supportModel = new SupportModel(imageUri, message);
+        RetrofitClient.getRetrofitClient().postAnimal(supportModel).enqueue(new Callback<SupportModel>() {
+            @Override
+            public void onResponse(Call<SupportModel> call, Response<SupportModel> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(SupportActivity.this, "Animal added", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SupportModel> call, Throwable t) {
+                Toast.makeText(SupportActivity.this, "Error adding animal", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
