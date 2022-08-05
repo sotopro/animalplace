@@ -16,7 +16,7 @@
         android:layout_margin="10dp"
         >
         <ImageView
-            android:id="@+id/animal_photo"
+            android:id="@+id/animal_image"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:src="@drawable/cocodrilo"

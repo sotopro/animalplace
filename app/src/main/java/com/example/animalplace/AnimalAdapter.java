@@ -1,5 +1,6 @@
 package com.example.animalplace;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder> {
 
-    private ArrayList<AnimalModel> animalModel;
+    private List<AnimalModel> animalModel;
 
-    public AnimalAdapter(ArrayList<AnimalModel> animalModel) {
+    public AnimalAdapter(List<AnimalModel> animalModel) {
         this.animalModel = animalModel;
     }
 
@@ -31,8 +33,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull AnimalAdapter.ViewHolder holder, int position) {
-        holder.animalName.setText(animalModel.get(position).getAnimalName());
-        Glide.with(holder.itemView.getContext()).load(animalModel.get(position).getAnimalPhoto()).into(holder.animalPhoto);
+        holder.animalName.setText(animalModel.get(position).getName());
+        Glide.with(holder.itemView.getContext()).load(animalModel.get(position).getImage()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.animalImage);
     }
 
     @Override
@@ -43,12 +45,12 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView animalName;
-        ImageView animalPhoto;
+        ImageView animalImage;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             animalName = itemView.findViewById(R.id.animal_name);
-            animalPhoto = itemView.findViewById(R.id.animal_photo);
+            animalImage = itemView.findViewById(R.id.animal_image);
         }
     }
 }
