@@ -47,4 +47,17 @@ public class DbUsers extends DbHelper {
         }
         return exists;
     }
+
+    public Cursor getAllUsers() {
+        Cursor cursor = null;
+        try {
+            DbHelper dbHelper = new DbHelper(context);
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+            String query = "SELECT * FROM " + TABLE_USER;
+            cursor = db.rawQuery(query, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cursor;
+    }
 }

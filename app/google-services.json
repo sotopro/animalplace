@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "741191853136",
+    "project_id": "animalplace-9bd6d",
+    "storage_bucket": "animalplace-9bd6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741191853136:android:47339155342147baf55d55",
+        "android_client_info": {
+          "package_name": "com.example.animalplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741191853136-6d08947qimde3aa4733r6u0alans3oni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWhmz43d1phov0y4WfaBUjhCNPdMypXP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741191853136-6d08947qimde3aa4733r6u0alans3oni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
